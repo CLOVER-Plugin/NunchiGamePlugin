@@ -1,0 +1,4 @@
+name: NunchiGamePlugin
+version: '1.0-SNAPSHOT'
+main: yd.kingdom.nunchiGamePlugin.NunchiGamePlugin
+api-version: '1.21'
