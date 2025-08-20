@@ -7,7 +7,7 @@ import yd.kingdom.nunchiGamePlugin.command.PointSelectCommand;
 import yd.kingdom.nunchiGamePlugin.command.VoteStartCommand;
 import yd.kingdom.nunchiGamePlugin.config.TeleportConfig;
 import yd.kingdom.nunchiGamePlugin.gui.TeleportGUIListener;
-import yd.kingdom.nunchiGamePlugin.item.ClockOpenListener;
+import yd.kingdom.nunchiGamePlugin.item.BreezeRodOpenListener;
 import yd.kingdom.nunchiGamePlugin.item.CountdownItem;
 import yd.kingdom.nunchiGamePlugin.item.CountdownUseListener;
 import yd.kingdom.nunchiGamePlugin.item.VotePaperItem;
@@ -36,7 +36,7 @@ public class NunchiGamePlugin extends JavaPlugin {
         this.pointerRoundManager = new PointerRoundManager(this);
 
         // 리스너
-        Bukkit.getPluginManager().registerEvents(new ClockOpenListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new BreezeRodOpenListener(this), this);
         Bukkit.getPluginManager().registerEvents(new CountdownUseListener(this), this);
         Bukkit.getPluginManager().registerEvents(new TeleportGUIListener(this), this);
         Bukkit.getPluginManager().registerEvents(new VoteGuiListener(this), this);
