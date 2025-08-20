@@ -2,3 +2,13 @@ name: NunchiGamePlugin
 version: '1.0-SNAPSHOT'
 main: yd.kingdom.nunchiGamePlugin.NunchiGamePlugin
 api-version: '1.21'
+commands:
+  아이템:
+    description: 아이템 지급 명령어
+    usage: /아이템 <카운트|투표>
+  투표시작:
+    description: 30초 투표를 시작합니다
+    usage: /투표시작
+  지목:
+    description: 4라운드 지목 시작 설정
+    usage: /지목 <플레이어이름> <숫자>
