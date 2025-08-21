@@ -11,7 +11,7 @@ public class CountdownItem {
     public CountdownItem(NunchiGamePlugin plugin){this.plugin=plugin;}
 
     public ItemStack build() {
-        ItemStack it = new ItemStack(Material.SLIME_BALL);
+        ItemStack it = new ItemStack(Material.TUBE_CORAL_FAN);
         ItemMeta im = it.getItemMeta();
         im.setDisplayName("§a게임 시작 카운트");
         it.setItemMeta(im);

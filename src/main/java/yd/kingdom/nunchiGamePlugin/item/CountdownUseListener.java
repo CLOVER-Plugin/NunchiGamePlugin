@@ -22,7 +22,7 @@ public class CountdownUseListener implements Listener {
 
         // 허공 우클릭에서도 확실히 아이템을 가져오도록
         ItemStack item = e.getPlayer().getInventory().getItem(e.getHand());
-        if (item == null || item.getType() != Material.SLIME_BALL) return;
+        if (item == null || item.getType() != Material.TUBE_CORAL_FAN) return;
 
         ItemMeta meta = item.getItemMeta();
         if (meta == null || !meta.hasDisplayName()) return;

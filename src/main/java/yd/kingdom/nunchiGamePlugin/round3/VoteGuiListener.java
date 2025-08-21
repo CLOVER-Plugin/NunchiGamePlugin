@@ -21,7 +21,7 @@ import yd.kingdom.nunchiGamePlugin.item.VotePaperItem;
 import java.util.List;
 
 public class VoteGuiListener implements Listener {
-    private static final String TITLE = "§6§l투표 대상 선택";
+    private static final String TITLE = "§0§l투표 대상 선택";
 
     private final Plugin plugin;
     public VoteGuiListener(Plugin plugin){ this.plugin=plugin; }
@@ -57,19 +57,38 @@ public class VoteGuiListener implements Listener {
                 .filter(pl -> pl.getGameMode() != GameMode.SPECTATOR)
                 .toList();
 
-        int size = ((candidates.size() / 9) + 1) * 9;
-        Inventory inv = Bukkit.createInventory(p, Math.min(Math.max(size, 9), 54), TITLE);
+        // 항상 5줄(45슬롯) GUI 생성
+        Inventory inv = Bukkit.createInventory(p, 45, TITLE);
 
-        int i=0;
-        for (Player c : candidates) {
-            if (i>=inv.getSize()) break;
+        // 1번째 줄(슬롯 0-8)을 검은색 유리판으로 채우기
+        for (int i = 0; i < 9; i++) {
+            ItemStack blackGlass = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+            inv.setItem(i, blackGlass);
+        }
+
+        // 5번째 줄(슬롯 36-44)을 검은색 유리판으로 채우기
+        for (int i = 36; i < 45; i++) {
+            ItemStack blackGlass = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+            inv.setItem(i, blackGlass);
+        }
+
+        // 지정된 위치에 플레이어 헤드 배치 (11, 15, 19, 21, 23, 25, 29, 33)
+        int[] headPositions = {11, 15, 19, 21, 23, 25, 29, 33};
+        int candidateIndex = 0;
+        
+        for (int position : headPositions) {
+            if (candidateIndex >= candidates.size()) break;
+            
+            Player c = candidates.get(candidateIndex);
             ItemStack head = new ItemStack(Material.PLAYER_HEAD);
             SkullMeta sm = (SkullMeta) head.getItemMeta();
             sm.setOwningPlayer(c);
             sm.setDisplayName("§f" + c.getName());
             head.setItemMeta(sm);
-            inv.setItem(i++, head);
+            inv.setItem(position, head);
+            candidateIndex++;
         }
+        
         p.openInventory(inv);
     }
 

@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class TeleportGUI {
 
-    public static final String TITLE = "§eTeleport Menu";
+    public static final String TITLE = "§0§lTP";
     private static final Set<Integer> PINK_FRAME = new HashSet<>(Arrays.asList(
             0,1,2,3,4,5,6,7,8,9,17,18,26,27,28,29,30,31,32,33,34,35
     ));
@@ -28,13 +28,13 @@ public class TeleportGUI {
         PINK_FRAME.forEach(s -> inv.setItem(s, pane));
 
         // 13: 네더의 별 → spawn
-        inv.setItem(13, named(Material.NETHER_STAR, "§bSpawn"));
+        inv.setItem(13, named(Material.NETHER_STAR, "§f§l스폰"));
         // 20~24: 관/뇌/사방/거품/불 산호 → r1..r5
-        inv.setItem(20, named(Material.HORN_CORAL, "§dRound 1"));
-        inv.setItem(21, named(Material.BRAIN_CORAL, "§dRound 2"));
-        inv.setItem(22, named(Material.TUBE_CORAL, "§dRound 3"));
-        inv.setItem(23, named(Material.BUBBLE_CORAL, "§dRound 4"));
-        inv.setItem(24, named(Material.FIRE_CORAL, "§dRound 5"));
+        inv.setItem(20, named(Material.TUBE_CORAL, "§c§l1 라운드"));
+        inv.setItem(21, named(Material.BRAIN_CORAL, "§c§l2 라운드"));
+        inv.setItem(22, named(Material.HORN_CORAL, "§c§l3 라운드"));
+        inv.setItem(23, named(Material.BUBBLE_CORAL, "§c§l4 라운드"));
+        inv.setItem(24, named(Material.FIRE_CORAL, "§c§l5 라운드"));
 
         return inv;
     }

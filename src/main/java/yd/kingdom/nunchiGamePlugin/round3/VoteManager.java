@@ -41,7 +41,7 @@ public class VoteManager {
                         Player v = Bukkit.getPlayer(en.getKey());
                         return v!=null?v.getName():en.getKey().toString();
                     }).toList();
-            Bukkit.broadcastMessage(" §f" + name + " §7(" + e.getValue() + ") : §f" + String.join(", ", voters));
+            Bukkit.broadcastMessage(" §f" + name + " §e(" + e.getValue() + "표) §f: §7" + String.join(", ", voters));
         }
     }
 

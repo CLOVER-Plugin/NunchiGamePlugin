@@ -30,9 +30,9 @@ public class TeleportGUIListener implements Listener {
 
         switch (m) {
             case NETHER_STAR -> dest = cfg.get(TeleportConfig.Key.spawn);
-            case HORN_CORAL -> dest = cfg.get(TeleportConfig.Key.r1);
+            case TUBE_CORAL -> dest = cfg.get(TeleportConfig.Key.r1);
             case BRAIN_CORAL -> dest = cfg.get(TeleportConfig.Key.r2);
-            case TUBE_CORAL -> dest = cfg.get(TeleportConfig.Key.r3);
+            case HORN_CORAL -> dest = cfg.get(TeleportConfig.Key.r3);
             case BUBBLE_CORAL -> dest = cfg.get(TeleportConfig.Key.r4);
             case FIRE_CORAL -> dest = cfg.get(TeleportConfig.Key.r5);
             default -> {}
