@@ -1,0 +1,177 @@
+# 2라운드 과녁 설정
+round2:
+  # 과녁 위치 (3x1x3 크기의 빨간색 콘크리트 블럭들)
+  targets:
+    target1:
+      center:
+        world: "world"
+        x: 100
+        y: 64
+        z: 100
+      # 3x1x3 영역의 모든 블럭 위치
+      blocks:
+        - world: "world"
+          x: 99
+          y: 64
+          z: 99
+        - world: "world"
+          x: 100
+          y: 64
+          z: 99
+        - world: "world"
+          x: 101
+          y: 64
+          z: 99
+        - world: "world"
+          x: 99
+          y: 64
+          z: 100
+        - world: "world"
+          x: 100
+          y: 64
+          z: 100
+        - world: "world"
+          x: 101
+          y: 64
+          z: 100
+        - world: "world"
+          x: 99
+          y: 64
+          z: 101
+        - world: "world"
+          x: 100
+          y: 64
+          z: 101
+        - world: "world"
+          x: 101
+          y: 64
+          z: 101
+    target2:
+      center:
+        world: "world"
+        x: 110
+        y: 64
+        z: 100
+      blocks:
+        - world: "world"
+          x: 109
+          y: 64
+          z: 99
+        - world: "world"
+          x: 110
+          y: 64
+          z: 99
+        - world: "world"
+          x: 111
+          y: 64
+          z: 99
+        - world: "world"
+          x: 109
+          y: 64
+          z: 100
+        - world: "world"
+          x: 110
+          y: 64
+          z: 100
+        - world: "world"
+          x: 111
+          y: 64
+          z: 100
+        - world: "world"
+          x: 109
+          y: 64
+          z: 101
+        - world: "world"
+          x: 110
+          y: 64
+          z: 101
+        - world: "world"
+          x: 111
+          y: 64
+          z: 101
+    target3:
+      center:
+        world: "world"
+        x: 120
+        y: 64
+        z: 100
+      blocks:
+        - world: "world"
+          x: 119
+          y: 64
+          z: 99
+        - world: "world"
+          x: 120
+          y: 64
+          z: 99
+        - world: "world"
+          x: 121
+          y: 64
+          z: 99
+        - world: "world"
+          x: 119
+          y: 64
+          z: 100
+        - world: "world"
+          x: 120
+          y: 64
+          z: 100
+        - world: "world"
+          x: 121
+          y: 64
+          z: 100
+        - world: "world"
+          x: 119
+          y: 64
+          z: 101
+        - world: "world"
+          x: 120
+          y: 64
+          z: 101
+        - world: "world"
+          x: 121
+          y: 64
+          z: 101
+  
+  # 방해 블럭 영역 (각 과녁마다 pos1, pos2로 영역 설정)
+  barriers:
+    barrier1:
+      pos1:
+        world: "world"
+        x: 99
+        y: 65
+        z: 99
+      pos2:
+        world: "world"
+        x: 101
+        y: 67
+        z: 101
+    barrier2:
+      pos1:
+        world: "world"
+        x: 109
+        y: 65
+        z: 99
+      pos2:
+        world: "world"
+        x: 111
+        y: 67
+        z: 101
+    barrier3:
+      pos1:
+        world: "world"
+        x: 119
+        y: 65
+        z: 99
+      pos2:
+        world: "world"
+        x: 121
+        y: 67
+        z: 101
+  
+  # 게임 설정
+  settings:
+    round_duration: 180 # 3분 (초 단위)
+    barrier_open_duration: 2 # 방해 블럭이 열려있는 시간 (초 단위)
+    min_open_targets: 1 # 최소 열리는 과녁 수
+    max_open_targets: 3 # 최대 열리는 과녁 수
