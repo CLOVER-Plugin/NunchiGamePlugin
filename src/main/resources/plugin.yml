@@ -1,0 +1,20 @@
+name: NunchiGamePlugin
+version: '1.0-SNAPSHOT'
+main: yd.kingdom.nunchiGamePlugin.NunchiGamePlugin
+api-version: '1.21'
+commands:
+  아이템:
+    description: 아이템 지급 명령어
+    usage: /아이템 <카운트|투표>
+  투표시작:
+    description: 30초 투표를 시작합니다
+    usage: /투표시작
+  2라운드:
+    description: 2라운드 양궁 게임을 시작합니다
+    usage: /2라운드 [중단]
+  영역설정:
+    description: 2라운드 과녁과 방해 블럭 영역을 설정합니다
+    usage: /영역설정 <과녁1|과녁2|과녁3|방해1|방해2|방해3|취소|저장|불러오기|목록|삭제>
+  참여:
+    description: 2라운드 참여자로 등록합니다 (최대 4명)
+    usage: /참여

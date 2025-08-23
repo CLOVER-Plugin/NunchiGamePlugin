@@ -1,0 +1,42 @@
+spawn:
+  world: "world"
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+r1:
+  world: "world"
+  x: 10.0
+  y: 64.0
+  z: 10.0
+  yaw: 90.0
+  pitch: 0.0
+r2:
+  world: "world"
+  x: 20.0
+  y: 64.0
+  z: 10.0
+  yaw: 90.0
+  pitch: 0.0
+r3:
+  world: "world"
+  x: 30.0
+  y: 64.0
+  z: 10.0
+  yaw: 90.0
+  pitch: 0.0
+r4:
+  world: "world"
+  x: 40.0
+  y: 64.0
+  z: 10.0
+  yaw: 90.0
+  pitch: 0.0
+r5:
+  world: "world"
+  x: 50.0
+  y: 64.0
+  z: 10.0
+  yaw: 90.0
+  pitch: 0.0
