@@ -15,7 +15,7 @@ public class CountdownUseListener implements Listener {
     private final NunchiGamePlugin plugin;
     public CountdownUseListener(NunchiGamePlugin plugin){ this.plugin = plugin; }
 
-    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = false)
+    @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         Action a = e.getAction();
         if (a != Action.RIGHT_CLICK_AIR && a != Action.RIGHT_CLICK_BLOCK) return;
@@ -29,7 +29,7 @@ public class CountdownUseListener implements Listener {
 
         // 색코드 차이 방지: 색 제거 후 비교
         String name = org.bukkit.ChatColor.stripColor(meta.getDisplayName());
-        if (!"게임 시작 카운트".equals(name)) return;
+        if (!"스톱워치".equals(name)) return;
 
         // 더블트리거 방지: 메인핸드만 처리 (오프핸드도 허용하려면 이 줄 삭제)
         if (e.getHand() != EquipmentSlot.HAND) return;

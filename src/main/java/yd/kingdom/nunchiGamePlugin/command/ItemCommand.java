@@ -13,10 +13,9 @@ public class ItemCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) { sender.sendMessage("플레이어만 사용 가능합니다."); return true; }
-        if (args.length != 1) { player.sendMessage("/아이템 <카운트|투표>"); return true; }
+        if (args.length != 1) { player.sendMessage("/아이템 <카운트|투표|자수정>"); return true; }
 
-        String sub = args[0];
-        switch (sub) {
+        switch (args[0]) {
             case "카운트" -> {
                 plugin.getCountdownItem().give(player);
                 player.sendMessage("카운트 아이템 지급 완료");
@@ -25,10 +24,12 @@ public class ItemCommand implements CommandExecutor {
                 player.getInventory().addItem(plugin.getVotePaperItem().build());
                 player.sendMessage("투표용지 지급 완료");
             }
-            default -> player.sendMessage("/아이템 <카운트|투표>");
+            case "자수정" -> {
+                plugin.getThemeShardItem().give(player);
+                player.sendMessage("자수정 조각 지급 완료");
+            }
+            default -> player.sendMessage("/아이템 <카운트|투표|자수정>");
         }
         return true;
     }
 }
-
-

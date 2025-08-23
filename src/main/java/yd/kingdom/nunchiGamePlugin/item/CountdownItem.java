@@ -13,7 +13,7 @@ public class CountdownItem {
     public ItemStack build() {
         ItemStack it = new ItemStack(Material.TUBE_CORAL_FAN);
         ItemMeta im = it.getItemMeta();
-        im.setDisplayName("§a게임 시작 카운트");
+        im.setDisplayName("§a스톱워치");
         it.setItemMeta(im);
         return it;
     }
