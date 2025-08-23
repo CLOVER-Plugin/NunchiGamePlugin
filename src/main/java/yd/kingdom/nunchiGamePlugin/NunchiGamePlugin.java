@@ -2,17 +2,10 @@ package yd.kingdom.nunchiGamePlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import yd.kingdom.nunchiGamePlugin.command.AreaSetupCommand;
-import yd.kingdom.nunchiGamePlugin.command.ItemCommand;
-import yd.kingdom.nunchiGamePlugin.command.ParticipateCommand;
-import yd.kingdom.nunchiGamePlugin.command.Round2Command;
-import yd.kingdom.nunchiGamePlugin.command.VoteStartCommand;
+import yd.kingdom.nunchiGamePlugin.command.*;
 import yd.kingdom.nunchiGamePlugin.config.TeleportConfig;
 import yd.kingdom.nunchiGamePlugin.gui.TeleportGUIListener;
-import yd.kingdom.nunchiGamePlugin.item.ClockOpenListener;
-import yd.kingdom.nunchiGamePlugin.item.CountdownItem;
-import yd.kingdom.nunchiGamePlugin.item.CountdownUseListener;
-import yd.kingdom.nunchiGamePlugin.item.VotePaperItem;
+import yd.kingdom.nunchiGamePlugin.item.*;
 import yd.kingdom.nunchiGamePlugin.round1.CountdownService;
 import yd.kingdom.nunchiGamePlugin.round2.ArcherRoundManager;
 import yd.kingdom.nunchiGamePlugin.round2.AreaSelectionManager;
@@ -20,6 +13,8 @@ import yd.kingdom.nunchiGamePlugin.round2.PlayerJoinListener;
 import yd.kingdom.nunchiGamePlugin.round2.TargetListener;
 import yd.kingdom.nunchiGamePlugin.round3.VoteGuiListener;
 import yd.kingdom.nunchiGamePlugin.round3.VoteManager;
+import yd.kingdom.nunchiGamePlugin.round4.ThemeTimerListener;
+import yd.kingdom.nunchiGamePlugin.round4.ThemeTimerManager;
 
 public class NunchiGamePlugin extends JavaPlugin {
 
@@ -28,6 +23,8 @@ public class NunchiGamePlugin extends JavaPlugin {
     private VoteManager voteManager;
     private ArcherRoundManager archerRoundManager;
     private AreaSelectionManager areaSelectionManager;
+    private ThemeTimerManager themeTimerManager;
+    private ThemeShardItem themeShardItem;
 
     @Override
     public void onEnable() {
@@ -37,6 +34,8 @@ public class NunchiGamePlugin extends JavaPlugin {
         this.voteManager = new VoteManager(this);
         this.archerRoundManager = new ArcherRoundManager(this);
         this.areaSelectionManager = new AreaSelectionManager(this.archerRoundManager);
+        this.themeTimerManager = new ThemeTimerManager(this);
+        this.themeShardItem = new ThemeShardItem(this);
 
         // 리스너
         Bukkit.getPluginManager().registerEvents(new ClockOpenListener(this), this);
@@ -46,6 +45,7 @@ public class NunchiGamePlugin extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new TargetListener(archerRoundManager), this);
         Bukkit.getPluginManager().registerEvents(areaSelectionManager, this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(archerRoundManager), this);
+        Bukkit.getPluginManager().registerEvents(new ThemeTimerListener(this), this);
 
         // 커맨드
         if (getCommand("아이템") != null) {
@@ -82,4 +82,7 @@ public class NunchiGamePlugin extends JavaPlugin {
     // 헬퍼: 공용 아이템 팩토리 노출(슬라임볼/투표용지)
     public CountdownItem getCountdownItem() { return new CountdownItem(this); }
     public VotePaperItem getVotePaperItem() { return new VotePaperItem(this); }
+
+    public ThemeTimerManager getThemeTimerManager() { return themeTimerManager; }
+    public ThemeShardItem getThemeShardItem() { return themeShardItem; }
 }

@@ -175,3 +175,20 @@ round2:
     barrier_open_duration: 2 # 방해 블럭이 열려있는 시간 (초 단위)
     min_open_targets: 1 # 최소 열리는 과녁 수
     max_open_targets: 3 # 최대 열리는 과녁 수
+
+round4:
+  topics:
+    - 애니
+    - 마인크래프트
+    - 동물
+    - 인물
+    - 음료
+    - 아이돌 그룹
+    - TV 프로그램
+    - 브랜드
+    - 직업
+    - 노래
+    - 과자
+    - 라면
+    - PC 게임
+    - 사자성어
